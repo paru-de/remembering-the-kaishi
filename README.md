@@ -2,6 +2,8 @@ Small clanker script adding Heisig frame id's and keywords to a Kaishi deck.
 
 Heisig frames are added as tags (only adding the highest id found in a *Word* field), allowing you to target corresponding Kaishi cards as you progress through RTK. Also adds keywords matching your vocabulary cards.
 
+***This is for the 6th edition only. Check the script and csv if you wan't to use it with older editions!***
+
 ## Prerequisites 
 
 **IF YOU'VE ALREADY STARTED A KAISHI DECK, MAKE A BACKUP OF IT**
