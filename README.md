@@ -56,6 +56,31 @@ Word:re:^[^一-龯]*$
 
 ## Using the deck in conjunction with RTK
 
+### Option 1 (Manually unsuspend cards with frames you've learned)
+Click *Browse*, select your deck, search for `-tag:kana-only` and suspend all kanji cards (*Ctrl+A* > *right-click* > *Toggle suspend*). Next, either use the tag browser or a search for `tag:0000` (where `0000` is a Heisig frame from `0001` to `2200`), and unsuspend all cards with frames you've already learned. 
+
+*Pro-Tip: If you are dealing with a large amount of frames, just let Google Search's AI build a search string for you. For example, prompt it with `anki search string for tags 0201 - 0500` and copy-pasta the regex you get.* 
+
+
+In the deck's study options, set *New cards/day* to 0. Click on the deck, select *Custom Study* and select any option. 
+
+Open the newly created Custom Deck, click *Options* and activate (at the bottom) *Enable second filter.* as well as *Reschedule cards based on my answers in this deck*.
+Then change the search filters as follows:
+
+Filter 1:
+```
+is:new "deck:YOUR DECK NAME" -tag:kana-only
+```
+Set the limit to something sensible. I prefer a Random card selection, but you can also just go with Kaishi's order of cards.
+
+```
+is:new "deck:YOUR DECK NAME" tag:kana-only
+```
+Set the limit to something sensible. There are roughly 180 cards without kanji in the deck. I prefer learning a handful each day, because learning a large batch of them all at once is kind of a pain.
+
+Click Rebuild and you're done. Rename the deck, and go through it each day. Unsuspend cards as you learn new frames with RTK, and hit Rebuild whenever you want a new batch of cards.
+
+### Option 2 (Filter out all cards with frames you've learned)
 In the deck's study options, set *New cards/day* to 0. Click on the deck, select *Custom Study* > *Study card by state or tag* > *New cards only*. Select all tags up to your current RTK progress. 
 
 Next, click on the newly created Custom Study deck. Select *Options* in the bottom left. Rename the deck to something appropriate, e.g. "RTK Frames 1-250" (this is important!). Set the *Limit to* 9999 and select *Random* from the dropdown menu to the right.
